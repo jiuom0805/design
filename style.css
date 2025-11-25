@@ -651,3 +651,88 @@ body {
     padding: 0 4px;
   }
 }
+
+/* =========================
+  PROJECT CARD HOVER EFFECTS
+   ========================= */
+
+/* 카드 기본 부드러운 움직임 */
+.project-card {
+  transition: 0.28s ease;
+}
+
+/* 카드 전체를 링크처럼 */
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 안에 있는 요소들도 부드럽게 */
+.project-card .project-thumb img,
+.project-card .project-tape,
+.project-card .project-tag {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+}
+
+/* 1) 카드 전체: 살짝 떠오르고 기울어지면서 그림자 깊어짐 */
+.project-link:hover .project-card {
+  transform: translateY(-6px) rotate(-0.8deg);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.16);
+}
+
+/* 2) 이미지: 살짝 확대 (스티커가 쫙 붙은 느낌) */
+.project-link:hover .project-card .project-thumb img {
+  transform: scale(1.03);
+}
+
+/* 3) 태그 라벨: 살짝 위로 톡 튀어나옴 */
+.project-link:hover .project-card .project-tag {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* 4) 테이프: 방향별로 살짝 더 흔들리게 */
+.project-link:hover .project-card .project-tape--left {
+  transform: rotate(-4deg) translateY(-2px);
+}
+
+.project-link:hover .project-card .project-tape--center {
+  transform: rotate(2deg) translateY(-2px);
+}
+
+.project-link:hover .project-card .project-tape--right {
+  transform: rotate(4deg) translateY(-2px);
+}
+
+/* 카드 전체를 클릭 가능하도록 */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;         /* 파란색 제거 */
+}
+
+/* 방문 후 보라색도 제거 */
+.project-card-link:visited {
+  color: inherit;
+}
+
+/* 호버 효과 */
+.project-card-link:hover .project-card {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* 부드러운 기본 상태 */
+.project-card {
+  transition: all 0.25s ease;
+}
+
+
+  .section-inner {
+    padding: 0 4px;
+  }
+}
